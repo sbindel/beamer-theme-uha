@@ -13,10 +13,10 @@
 \defbeamertemplate*{title page}{uha}{
 	\nointerlineskip
 	\begin{beamercolorbox}[dp=2.3ex, sep=2ex, wd=\paperwidth, ht=\paperheight]{titlepage}
-		\vbox to 69.8ex{
+		\vbox to 62ex{
 			\hfill \input{logo-uha/logo-titre.tikz}
 			
-			\vspace{5em}
+			\vspace{4em}
 			
 			{\bfseries \Large \inserttitle} \\
 			\vspace{1em}
@@ -38,15 +38,14 @@
 %--------------------------------------------------------------
 % Title frame
 %--------------------------------------------------------------
-\setbeamercolor{titlelike}{parent=palette primary}
 \defbeamertemplate*{frametitle}{uha}{
 	\nointerlineskip
-	\begin{beamercolorbox}[sep=0.1cm,ht=2em,wd=\paperwidth]{frametitle}
+	\begin{beamercolorbox}[sep=0.27cm,ht=2.7em,wd=\paperwidth, shadow=true]{frametitle}
 		\vbox{}\vskip-2ex%
 		\strut\insertframetitle\strut
 		\hfill
-		\raisebox{-0.8mm}{\includegraphics[height=3ex]{logo-uha/logo}}
-	\end{beamercolorbox}
+		\raisebox{-1.7mm}{\includegraphics[height=3.2ex]{logo-uha/logo}}
+	\end{beamercolorbox}%
 }
 
 %--------------------------------------------------------------

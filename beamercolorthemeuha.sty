@@ -7,28 +7,24 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamercolorthemeuha}[2018/10/22 uha color theme]
 
-%--------------------------------------------------------------
-% Packages
-%--------------------------------------------------------------
-\RequirePackage{xcolor}
-
-% Colours
+% define colors
 \definecolor{blueUHA1}{RGB}{0,62,128}%\definecolor{blueUHA1}{RGB}{0,73,150}}
 \definecolor{blueUHA2}{RGB}{0,159,227}
 \definecolor{GreenOlive}{RGB}{63,126,50}
 \definecolor{light-gray}{RGB}{245,245,245}
 
-
 % Settings
-\setbeamercolor{titlepage}{fg=light-gray,bg=blueUHA1}
-\setbeamercolor{background canvas}{bg=light-gray}
-\setbeamercolor{background}{bg=light-gray}
-\setbeamercolor{normal text}{fg=blueUHA1!50!black,bg=light-gray}
+\setbeamercolor{titlepage}{fg=light-gray!5,bg=blueUHA1}
+\setbeamercolor{background canvas}{bg=light-gray!5}
+\setbeamercolor{background}{bg=light-gray!5}
+\setbeamercolor{normal text}{fg=black!75,bg=light-gray!5}
 \setbeamercolor*{item}{fg=blueUHA1}
+\setbeamercolor{frametitle}{bg=blueUHA1,fg=light-gray!5}
+\setbeamercolor{alerted text}{fg=blueUHA1}
 
 % Block
 \setbeamercolor{block title}{fg=blueUHA1}
-\setbeamercolor{block body}{fg=blueUHA1!50!black,bg=gray!12!white}
+\setbeamercolor{block body}{fg=blueUHA1!50!black,bg=light-gray!5!white}
 % Example block
 \setbeamercolor{block title example}{fg=green!60!black}
 \setbeamercolor{block body example}{fg=green!60!black}
@@ -37,5 +33,5 @@
 \setbeamercolor{block body alerted}{fg=red!80!black, bg=gray!12!white }
 
 %palettes
-\setbeamercolor{palette primary}{fg=light-gray,bg=blueUHA1}
-\setbeamercolor{palette secondary}{bg=light-gray,fg=blueUHA1}
+\setbeamercolor{palette primary}{fg=light-gray!5,bg=blueUHA1}
+\setbeamercolor{palette secondary}{bg=light-gray!5,fg=blueUHA1}
