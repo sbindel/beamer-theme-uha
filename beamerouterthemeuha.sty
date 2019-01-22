@@ -59,3 +59,22 @@
     \end{beamercolorbox}
 }
 
+%--------------------------------------------------------------
+% Section page
+%--------------------------------------------------------------
+\defbeamertemplate*{section page}{uha}{
+	\nointerlineskip
+	\begin{beamercolorbox}[dp=2.3ex, sep=2ex, wd=\paperwidth, ht=\paperheight]{titlepage}
+		\vbox to 35ex{
+			\hspace{0.16\linewidth}
+			\begin{minipage}[c]{0.6\linewidth}
+				{\Large \bfseries \insertsection}
+
+				\begin{tikzpicture}
+					\draw[line width=0.5pt, color=blueUHA2] (0,0) -- (\linewidth,0);
+				\end{tikzpicture}
+			\end{minipage}
+		}
+	\end{beamercolorbox}
+}
+\AtBeginSection{\frame{\sectionpage}}
