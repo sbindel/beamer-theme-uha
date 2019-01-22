@@ -7,7 +7,7 @@ The installation of this theme involves four easy steps :
 1. **Download the source** with a git clone of the beamer-theme-uha repository or as a zip archive.
 2. **Move .sty files and the logo directory** to the folder containing your presentation. 
 3. **Use the theme** by declaring `\usetheme{uha}` in the preamble of your Beamer document. 
-4. **For best results** set the font size at *8pt*.
+4. **For best results** set the font size at *9pt*.
 
 
 ## Usage 
@@ -26,19 +26,40 @@ The following code shows a minimal example of a Beamer presentation using the be
 
 \begin{document}
 
-  \begin{frame}[plain, noframenumbering]
-	  \titlepage
-  \end{frame}
-  
-  \begin{frame}[fragile]{beamer UHA}
-    Le thème beamer uha s'inspire du thème Metropolis qui lui même s'inspire du thème HSRM de Benjamin Weiss.
+\begin{frame}[plain, noframenumbering]
+	\titlepage
+\end{frame}
 
-    Le thème se charge de la manière suivante :
+\section{Introduction}
 
-    \begin{verbatim}
-      \documentclass[8pt]{beamer}
-      \usetheme{uha}
-    \end{verbatim}
+\begin{frame}[fragile]{beamer UHA}
+	
+	Le thème beamer uha s'inspire du thème Metropolis qui lui même s'inspire du thème HSRM de Benjamin Weiss.
+
+	Le thème se charge de la manière suivante :
+
+	\begin{verbatim}
+	\documentclass[9pt]{beamer}
+	\usetheme{uha}
+	\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Section}
+	Chaque section permet de regrouper des diapositives d'un même sujet.
+	\begin{verbatim}
+	\section{Les éléments}
+	\end{verbatim}
+\end{frame}
+
+\section{Les éléments}
+
+\begin{frame}[fragile]{Typographie}
+	\begin{verbatim}
+	Le thème uha permet de mettre en \emph{valeur du texte}, 
+	de mettre en \textbf{gras du texte} et même 
+	\alert{d'alerter le lecteur}.
+	\end{verbatim}
+	Le thème uha permet de mettre en \emph{valeur du texte}, de mettre en \textbf{gras du texte} et même \alert{d'alerter le lecteur}.
 \end{frame}
 
 \begin{frame}{Les listes}
