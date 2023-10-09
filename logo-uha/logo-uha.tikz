@@ -1,0 +1,10 @@
+﻿\definecolor{blueUha1}{RGB}{0,73,149}
+\definecolor{blueUha2}{RGB}{0,158,225}
+
+\begin{tikzpicture}
+	\draw [color=blueUha1, fill=blueUha1] (-0.98,-1.67) -- (-0.75,-1.58) ..controls +(0.95,2) and +(1.1,2.2).. (1.55,-0.75) -- (1.79, -0.67) ..controls +(1,2.1) and +(1.25,2.6).. (-0.98,-1.67);
+
+	\draw [color=blueUha2, fill=blueUha2] (-1.78,0.63) -- (-1.52,0.73) ..controls +(-1.19,-2.43) and +(-0.7,-1.62).. (0.77,1.56) -- (0.99,1.65) ..controls +(-1.1,-2.45) and +(-1,-2.2).. (-1.78,0.63);
+
+	\draw [color=blueUha1, fill=blueUha1] (-1,0.03) -- (1.07,0.03) -- (1,-0.1) -- (-1.05,-0.1) -- (-1,0.03);
+\end{tikzpicture}

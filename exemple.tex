@@ -1,72 +1,107 @@
-\documentclass[9pt]{beamer}
+%\documentclass[aspectratio=169]{beamer}
+\documentclass[]{beamer}
 
 \usetheme{uha}
 
 \usepackage[french,english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[slantedGreek,slantedGreek]{cmbright}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage[loadonly]{enumitem}
+\usepackage{listings}
 
 \newlist{perso}{enumerate}{1}
 \setlist[perso]{label=\arabic*--}
 
-\title{Titre de la présentation}
-\subtitle{Sous-titre}
-\date{Date d'aujourd'hui}
-\author{Auteur de la présentation}
+
+\title{Le theme beamer de l'UHA}
+\subtitle{Présentation et tutoriel}
+\date{octobre 2023}
+\author{Dr. Sébastien Bindel}
 \institute{Université de Haute Alsace}
 
 \begin{document}
 
-% Title page 
+% Title page
 \begin{frame}[plain, noframenumbering]
 	\titlepage
 \end{frame}
 
-\section{Introduction}
+% Negative title page
+\begin{frame}[plain, noframenumbering, negative]
+	\titlepage
+\end{frame}
 
-\begin{frame}[fragile]{beamer UHA}
-	
-	Le thème beamer uha s'inspire du thème Metropolis qui lui même s'inspire du thème HSRM de Benjamin Weiss.
+\begin{frame}
+	\frametitle{Plan}
+	\tableofcontents
+\end{frame}
 
-	Le thème se charge de la manière suivante :
+\section{Chargement du thème}
+%
+\begin{frame}[fragile]{Le thème beamer UHA}
+	Le thème  \alert{\texttt{UHA}} n'est pas disponible sur le CTAN, mais dans un dépôt sur \href{https://github.com/sbindel/beamer-theme-uha}{GitHub}. Celui-ci se charge de la manière suivante :
+	\begin{lstlisting}[frame=single]
+\documentclass{beamer}
+\usetheme{uha}
+	\end{lstlisting}
 
-	\begin{verbatim}
-	\documentclass[9pt]{beamer}
-	\usetheme{uha}
-	\end{verbatim}
+	\textbf{Remarques :}
+	\begin{itemize}
+		\item Le theme supporte tous les tailles de police.
+		\item Tous les formats sont supportés.
+	\end{itemize}
+\end{frame}
+%
+\section{Les diapositives}
+
+\begin{frame}[fragile]
+	\frametitle{Un titre}
+	\framesubtitle{Un sous-titre}
+	Les titres d'une diapositive se spécifient avec les commandes \alert{frametitle} et \alert{framesubtitle}.
+
+		\begin{lstlisting}[frame=single]
+\frametitle{un titre}
+\framesubtitle{un sous-titre}
+	\end{lstlisting}
+	Il est également possible de définir une diapositive sans titre, en ne spécifiant rien.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Le pied de page}
+	Dans le pied de page se trouve le logo de l'UHA, dessiné avec TikZ, l'institut et le numéro des diapositives. Seules les diapositives classiques sont comptabilisées, celles liées aux sections et la première affichée ne sont pas prises en compte.
 \end{frame}
 
 \begin{frame}[fragile]{Section}
 	Chaque section permet de regrouper des diapositives d'un même sujet.
 	\begin{verbatim}
-	\section{Les éléments}
+% 	\section{Les éléments}
 	\end{verbatim}
-\end{frame}
+ \end{frame}
 
-\section{Les éléments}
-
-\begin{frame}[fragile]{Typographie}
-	\begin{verbatim}
-	Le thème uha permet de mettre en \emph{valeur du texte}, 
-	de mettre en \textbf{gras du texte} et même 
-	\alert{d'alerter le lecteur}.
-	\end{verbatim}
-	Le thème uha permet de mettre en \emph{valeur du texte}, de mettre en \textbf{gras du texte} et même \alert{d'alerter le lecteur}.
-\end{frame}
-
+ \begin{frame}[fragile]{Typographie}
+ 	\begin{verbatim}
+		Le thème permet de mettre en \emph{valeur du texte},
+		de mettre en \textbf{gras du texte} et même
+		\alert{d'alerter le lecteur}.
+ 	\end{verbatim}
+ 	Le thème permet de mettre en \emph{valeur du texte}, de mettre en \textbf{gras du texte} et même \alert{d'alerter le lecteur}.
+ \end{frame}
+%
+\section{Les listes}
+%
 \begin{frame}{Les listes classiques}
-	\begin{minipage}[t]{0.45\linewidth}
-		\alert{Une liste}
-		\begin{itemize}
-				\item Premier,
-				\item Second,
+ 	\begin{minipage}[t]{0.45\linewidth}
+ 		\alert{Une liste}
+ 		\begin{itemize}
+ 				\item Premier,
+ 				\item Second,
 				\item Troisième.
-		\end{itemize}
-	\end{minipage}
+ 		\end{itemize}
+ 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.45\linewidth}
 		\alert{Une énumération}
@@ -76,7 +111,7 @@
 				\item Troisième
 		\end{enumerate}
 	\end{minipage}
-	
+
 	\vspace{2em}
 
 	\alert{Une description}
@@ -85,35 +120,47 @@
 			\item [EURCOR] Le campus européen
 	\end{description}
 \end{frame}
-
-
+%
 \begin{frame}[fragile]
 	\frametitle{Personnalisation des listes avec enumitem}
-	Le paquet \alert{enumitem} peut être utilisé si et seulement l'option \alert{loadonly} est activé, comme indiqué ci-dessous.
+	Le paquet \alert{enumitem} peut être utilisé si et si seulement l'option \alert{loadonly} est activée, comme indiqué ci-dessous.
 \begin{verbatim}
 \usepackage[loadonly]{enumitem}
 \end{verbatim}
-	Etant donné que le paquet est chargé avec l'option \alert{loadonly}, la définition de nouvelles liste devient possible.
+	Etant donné que le paquet est chargé avec l'option \alert{loadonly}, la définition de nouvelles listes devient possible.
 	\begin{perso}
 			\item Le premier,
 			\item le second.
 	\end{perso}
 \end{frame}
-
-\begin{frame}{Les blocks}
-	\begin{exampleblock}{Exemple}
-		Un exemple
+%
+\begin{frame}{Les blocs}
+	\begin{exampleblock}{Un bloc exemple}
+		Ceci est un un exemple.
 	\end{exampleblock}
-	\begin{alertblock}{Exemple}
-		Une alerte
+
+	\begin{alertblock}{Un bloc alerte}
+		Une alerte.
 	\end{alertblock}
-	\begin{block}{Exemple}
-		Un block
+
+	\begin{block}{Un bloc classique}
+		Un bloc.
 	\end{block}
 \end{frame}
-\end{document}
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
+\begin{frame}[negative]
+	\frametitle{Diapositive négative}
+	Le template UHA permet d'inverser les couleurs en utilisant l'option \textbf{negative}.
+
+	\alert{Pour l'instant, les options fragile et negative sont incompatibles.}
+\end{frame}
+
+
+\begin{frame}[plain, noframenumbering, negative]
+	\frametitle{}
+	\begin{center}
+		\textbf{Merci de votre attention.}
+	\end{center}
+\end{frame}
+
+\end{document}

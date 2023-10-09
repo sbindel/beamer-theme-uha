@@ -8,72 +8,123 @@
 \ProvidesPackage{beamerouterthemeuha}[2018/10/22 uha outer theme]
 
 %--------------------------------------------------------------
-% First frame
+% Remove navigation menu
 %--------------------------------------------------------------
-\defbeamertemplate*{title page}{uha}{
-	\nointerlineskip
-	\begin{beamercolorbox}[dp=2.3ex, sep=2ex, wd=\paperwidth, ht=\paperheight]{titlepage}
-		\vbox to 62ex{
-			\hfill \input{logo-uha/logo-titre.tikz}
-			
-			\vspace{4em}
-			
-			{\bfseries \Large \inserttitle} \\
-			\vspace{1em}
-			{\large \insertsubtitle}
-			\vspace{1.5em}
-			
-			\textcolor{cblueUHA1}{\rule{0.8\linewidth}{.5pt}}
-			
-			\vspace{1.5em}
-			\insertauthor \\
-			\vspace{0.5em}
-			\insertdate \\
-			\vspace{0.5em}
-			\insertinstitute
-		}
-	\end{beamercolorbox}
-	\setbeamertemplate{footline}[page number]{}
-}
-%--------------------------------------------------------------
-% Title frame
+\setbeamertemplate{navigation symbols}{}
+
+\makeatletter
+
+%----------------------------------------------------
+%   Header
 %--------------------------------------------------------------
 \defbeamertemplate*{frametitle}{uha}{
-	\nointerlineskip
-	\begin{beamercolorbox}[sep=0.27cm,ht=2.7em,wd=\paperwidth]{frametitle}
-		\vbox{}\vskip-2ex%
-		\strut\insertframetitle\strut
-		\hfill
-		\raisebox{-1.7mm}{\includegraphics[height=3.2ex]{logo-uha/logo}}
-	\end{beamercolorbox}%
+    \nointerlineskip
+    \vskip-2pt%
+    \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=6.3ex, dp=1ex, left, leftskip=4ex]{head/foot}%
+        \usebeamerfont{frametitle}\insertframetitle
+        \strut\par%
+        \ifx\insertframesubtitle\@empty%
+            \nointerlineskip
+            \vphantom{\small Un sous titre}
+        \else%
+            \nointerlineskip
+            \usebeamerfont{subframetitle}\hspace{1pt}\insertframesubtitle
+        \fi
+    \end{beamercolorbox}%
+    \nointerlineskip%
+     \vskip-4.5pt%
+    \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=0.5ex, dp=0ex, leftskip=4ex]{headline}%
+        \begin{tikzpicture}
+            \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
+        \end{tikzpicture}
+    \end{beamercolorbox}%
 }
-
+%
+\defbeamertemplate{frametitle}{uha/negative}{
+    \nointerlineskip
+    \vskip-2pt%
+    \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=6.3ex, dp=1ex, left, leftskip=4ex]{head/foot negative}%
+        \usebeamerfont{frametitle}\insertframetitle
+        \strut\par%
+        \ifx\insertframesubtitle\@empty%
+            \nointerlineskip
+            \vphantom{\small Un sous titre}
+        \else%
+            \nointerlineskip
+            \usebeamerfont{subframetitle}\hspace{1pt}\insertframesubtitle
+        \fi
+    \end{beamercolorbox}%
+    \nointerlineskip%
+     \vskip-4.5pt%
+    \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=0.5ex, dp=0ex, leftskip=4ex]{headline}%
+        \begin{tikzpicture}
+            \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
+        \end{tikzpicture}
+    \end{beamercolorbox}%
+}
 %--------------------------------------------------------------
 % Footer
 %--------------------------------------------------------------
-\setbeamercolor{footline}{parent=palette secondary}
 \defbeamertemplate*{footline}{uha}{
-	\begin{beamercolorbox}[wd=\paperwidth,ht=2ex,dp=1.5ex,right]{}%
-		\insertframenumber \hspace{0.9em} 
-    \end{beamercolorbox}
+    \ifnum \insertpagenumber=1
+        \leavevmode%
+        \hbox{%
+            \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1ex,center]{}%
+                % empty environment to raise height
+            \end{beamercolorbox}}%
+            \vskip0pt%
+    \else
+        \nointerlineskip%
+        \leavevmode%
+        \begin{beamercolorbox}[sep=0ex, wd=0.3333\paperwidth, ht=2.5ex, dp=1ex, left, leftskip=2ex]{head/foot}%
+            \resizebox{0.03\textwidth}{!}{\input{logo/logo-uha.tikz}} \insertinstitute
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, center]{head/foot}%
+            %\usebeamerfont{footline}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, right, rightskip=2ex]{head/foot}%
+            \usebeamerfont{footline}\insertframenumber/\inserttotalframenumber
+        \end{beamercolorbox}%
+        \vskip0pt%
+    \fi
 }
-
+% negative footer
+\defbeamertemplate{footline}{uha/negative}{
+    \ifnum \insertpagenumber=1
+        \leavevmode%
+        \hbox{%
+            \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1ex,center]{}%
+                % empty environment to raise height
+            \end{beamercolorbox}}%
+            \vskip0pt%
+    \else
+        \nointerlineskip%
+        \leavevmode%
+        \begin{beamercolorbox}[sep=0ex, wd=0.3333\paperwidth, ht=2.5ex, dp=1ex, left, leftskip=2ex]{head/foot negative}%
+            \resizebox{0.03\textwidth}{!}{\input{logo/logo-uha-negative.tikz}} \insertinstitute
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, center]{head/foot negative}%
+            %\usebeamerfont{footline}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, right, rightskip=2ex]{head/foot negative}%
+            \usebeamerfont{footline}\insertframenumber/\inserttotalframenumber
+        \end{beamercolorbox}%
+        \vskip0pt%
+    \fi
+}
 %--------------------------------------------------------------
 % Section page
 %--------------------------------------------------------------
+\setbeamercolor{section page}{parent=palette secondary}
 \defbeamertemplate*{section page}{uha}{
-	\nointerlineskip
-	\begin{beamercolorbox}[dp=2.3ex, sep=2ex, wd=\paperwidth, ht=\paperheight]{titlepage}
-		\vbox to 35ex{
-			\hspace{0.16\linewidth}
-			\begin{minipage}[c]{0.6\linewidth}
-				{\Large \bfseries \insertsection}
-
-				\begin{tikzpicture}
-					\draw[line width=0.5pt, color=cblueUHA1] (0,0) -- (\linewidth,0);
-				\end{tikzpicture}
-			\end{minipage}
-		}
-	\end{beamercolorbox}
+    \nointerlineskip%
+    \vskip0pt%
+    \leavevmode
+    \begin{beamercolorbox}[wd=\paperwidth, ht=\paperheight, center]{sectionpage}
+       \usebeamerfont{section}\insertsectionnumber.~\insertsection
+       \vskip0.5\paperheight%
+    \end{beamercolorbox}
 }
-\AtBeginSection{\frame[noframenumbering]{\sectionpage}}
+\AtBeginSection{\frame[plain, noframenumbering]{\sectionpage}}
+%
+\makeatother

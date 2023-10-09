@@ -7,37 +7,34 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerinnerthemeuha}[2018/10/22 uha inner theme]
 
+
 %--------------------------------------------------------------
 % Paragraph spacing
 %--------------------------------------------------------------
 \setlength{\parskip}{1em}
 \renewcommand{\baselinestretch}{1.1}
-
+%
 %--------------------------------------------------------------
-% Itemize 
+% section format in the table of contents
 %--------------------------------------------------------------
-\setbeamertemplate{itemize items}{\footnotesize\textbullet}
-
-%--------------------------------------------------------------
-% Description 
-%--------------------------------------------------------------
-\setbeamersize{description width=0.83cm}
-
-%--------------------------------------------------------------
-% Example block environment
-%--------------------------------------------------------------
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+%
+% %--------------------------------------------------------------
+% % Example block environment
+% %--------------------------------------------------------------
 \defbeamertemplate*{block example begin}{uha}{
 	\par\vskip\medskipamount%
 	\usebeamercolor{block title example}
 	\begin{tikzpicture}
 		\node [
 			draw=fg,
-			fill=light-gray!5,
+			fill=bg,
 			inner sep=2ex,
-			text=greenUHA,
+			text=fg,
 			text width=\paperwidth - 2cm - 5ex,
 			minimum width=\paperwidth - 2cm - 1ex,
-			align=left, 
+			align=left,
 			rounded corners=1pt,
 			drop shadow={top color=black!50!white,
 				bottom color=black!30!white,
@@ -59,7 +56,7 @@
 					draw=fg,
 					fill=fg,
 					anchor=west,
-					text=light-gray!5,
+					text=bg,
 					rounded corners
 				] at ([shift={(5pt,0)}]BOXCONTENT.north west) {\textbf{\insertblocktitle}};
 			}
@@ -68,9 +65,9 @@
 	\vskip\smallskipamount
 }
 
-%--------------------------------------------------------------
-% Alert block environment
-%-------------------------------------------------------------
+% %--------------------------------------------------------------
+% % Alert block environment
+% %-------------------------------------------------------------
 \defbeamertemplate*{block alerted begin}{uha}
 {
   \par\vskip\medskipamount%
@@ -78,12 +75,12 @@
   \begin{tikzpicture}
     \node [
       draw=fg,
-  	  fill=light-gray!5,
-	  text=redUHA,
+  	  fill=bg,
+	  text=fg,
 	  inner sep=2ex,
       text width=\paperwidth - 2cm - 5ex,
       minimum width=\paperwidth - 2cm - 1ex,
-      align=left, 
+      align=left,
 	  rounded corners=1pt,
 	  drop shadow={top color=black!50!white,
 				bottom color=black!30!white,
@@ -104,9 +101,9 @@
   {
     \node [
 	  draw=fg,
-      fill=bg,
+      fill=fg,
       anchor=west,
-      text=white,
+      text=bg,
       rounded corners
   ] at ([shift={(5pt,0)}]BOXCONTENT.north west) {\textbf{\insertblocktitle}};
   }
@@ -114,10 +111,9 @@
   \end{tikzpicture}
   \vskip\smallskipamount
 }
-
-%--------------------------------------------------------------
-% Block environment
-%-------------------------------------------------------------
+% %--------------------------------------------------------------
+% % Block environment
+% %-------------------------------------------------------------
 \defbeamertemplate*{block begin}{uha}
 {
   \par\vskip\medskipamount%
@@ -127,8 +123,9 @@
   \fi
   \begin{tikzpicture}
     \node [
-      draw=blueUHA2!60!black,
-  	  fill=light-gray!5,
+      draw=fg,
+  	  fill=bg,
+  	  text=fg,
       inner sep = 1ex,
       inner ysep = \yskiplength,
       text width=\paperwidth - 2cm - 5ex,
@@ -154,10 +151,10 @@
   \else%
   {
     \node[
-	  draw=blueUHA2!60!black,
-      fill=blueUHA2!60!black,
+	  draw=fg,
+      fill=fg,
       anchor=west,
-      text=white,
+      text=bg,
       rounded corners
   ] at ([shift={(5pt,0)}]BOXCONTENT.north west) {\textbf{\insertblocktitle}};
   }
@@ -165,6 +162,45 @@
   \end{tikzpicture}
   \vskip\smallskipamount
 }
+%--------------------------------------------------------------
+% Title frame
+%--------------------------------------------------------------
+\defbeamertemplate*{title page}{uha}{
+  \nointerlineskip%
+  \vskip0pt%
+  \leavevmode
+  \begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=\paperheight, center]{titlepage}
+              \resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title.tikz}}\strut\par
+              \vskip20pt
+              {\LARGE \bfseries \inserttitle}\strut\par
+              \vskip10pt
+              {\large \bfseries \insertsubtitle}\strut\par
+              \vskip30pt
+              {\bfseries\insertauthor}\strut\par
+              \vskip1pt
+              {\bfseries\insertinstitute}\strut\par
+              \vskip20pt
+              \insertdate\strut\par
+              \vskip0.1\paperheight%
+  \end{beamercolorbox}
+}
 
-
-
+\defbeamertemplate{title page}{uha/negative}{
+  \nointerlineskip%
+  \vskip0pt%
+  \leavevmode
+  \begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=\paperheight, center]{titlepage negative}
+              \resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title-negative.tikz}}\strut\par
+              \vskip20pt
+              {\LARGE \bfseries \inserttitle}\strut\par
+              \vskip10pt
+              {\large \bfseries \insertsubtitle}\strut\par
+              \vskip30pt
+              {\bfseries\insertauthor}\strut\par
+              \vskip1pt
+              {\bfseries\insertinstitute}\strut\par
+              \vskip20pt
+              \insertdate\strut\par
+              \vskip0.1\paperheight%
+  \end{beamercolorbox}
+}

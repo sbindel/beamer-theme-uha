@@ -7,40 +7,72 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamercolorthemeuha}[2018/10/22 uha color theme]
 
-% define colors
-\definecolor{light-gray}{RGB}{245,245,245}
-% first color for UHA
-%\definecolor{GreenOlive}{RGB}{63,126,50}
-%\definecolor{blueUHA1}{RGB}{0,63,128}%\definecolor{blueUHA1}{RGB}{0,73,150}}
-%\definecolor{blueUHA2}{RGB}{0,159,227}
-% second color for UHA
-\definecolor{blueUHA1}{RGB}{0,63,128}
-\definecolor{cblueUHA1}{RGB}{197,118,0}
-\definecolor{blueUHA2}{RGB}{10,0,137}
-\definecolor{cblueUHA2}{RGB}{197,152,0}
-\definecolor{greenUHA}{RGB}{0,130,91}
-\definecolor{redUHA}{RGB}{183,0,36}
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% colors definition
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{uha@bggray}{RGB}{245,245,245}
+\definecolor{uha@blue1}{RGB}{0,63,128}
+\definecolor{uha@blue2}{RGB}{20,40,92}
+\definecolor{uha@orange1}{RGB}{204,86,20}
+\definecolor{uha@green}{RGB}{0,140,57}
+\definecolor{uha@red}{RGB}{194,24,12}
+
+\mode<presentation>
+
+\setbeamercolor{palette primary}{fg=uha@blue1, bg=uha@bggray}
+\setbeamercolor{palette secondary}{fg=uha@bggray, bg=uha@blue1}
+\setbeamercolor{palette tertiary}{fg=uha@bggray, bg=uha@blue1}
 
 
-% Settings
-\setbeamercolor{titlepage}{fg=light-gray!5,bg=blueUHA1}
-\setbeamercolor{background canvas}{bg=light-gray!5}
-\setbeamercolor{background}{bg=light-gray!5}
-\setbeamercolor{normal text}{fg=black!75,bg=light-gray!5}
-\setbeamercolor*{item}{fg=blueUHA1}
-\setbeamercolor{frametitle}{bg=blueUHA1,fg=light-gray!5}
-\setbeamercolor{alerted text}{fg=blueUHA1}
+\setbeamercolor{background canvas}{bg=}
+\setbeamercolor{normal text}{fg=uha@blue2}
+\setbeamercolor{alerted text}{fg=uha@orange1}
+\setbeamercolor{section in toc}{fg=uha@blue1}
+\setbeamercolor{subsection in toc}{fg=uha@blue1}
 
-% Block
-\setbeamercolor{block title}{fg=blueUHA1}
-\setbeamercolor{block body}{fg=blueUHA1!50!black,  bg=light-gray!5}
-% Example block
-\setbeamercolor{block title example}{fg=greenUHA}
-\setbeamercolor{block body example}{fg=greenUHA, bg=light-gray!5}
-% Alert block
-\setbeamercolor{block title alerted}{fg=redUHA}
-\setbeamercolor{block body alerted}{fg=redUHA, bg=light-gray!5}
 
-%palettes
-\setbeamercolor{palette primary}{fg=light-gray!5,bg=blueUHA1}
-\setbeamercolor{palette secondary}{bg=light-gray!5,fg=blueUHA1}
+\setbeamercolor{titlepage}{fg=uha@blue1, bg=}
+\setbeamercolor{titlepage negative}{fg=uha@bggray, bg=}
+\setbeamercolor{sectionpage}{fg=uha@bggray, bg=uha@blue2}
+
+\setbeamercolor{headline}{bg=, fg=uha@orange1}
+\setbeamercolor{head/foot}{bg=, fg=uha@blue1}
+\setbeamercolor{head/foot negative}{fg=uha@bggray, bg=uha@blue1}
+
+\setbeamercolor*{item}{fg=uha@blue1}
+
+\setbeamercolor{block title example}{fg=uha@green}
+\setbeamercolor{block title alerted}{fg=uha@red}
+\setbeamercolor{block title}{fg=uha@blue1}
+
+\setbeamercolor{block body example}{fg=uha@green,bg=uha@bggray}
+\setbeamercolor{block body alerted}{fg=uha@red,bg=uha@bggray}
+\setbeamercolor{block body}{fg=uha@blue1,bg=uha@bggray}
+
+
+\providebool{negative}
+
+\define@key{beamerframe}{negative}[true]{
+  \booltrue{negative}
+  \begingroup
+  \setbeamertemplate{title page}[uha/negative]
+  \setbeamertemplate{frametitle}[uha/negative]
+  \setbeamertemplate{footline}[uha/negative]
+  \usebeamercolor[bg]{background canvas}
+  \setbeamercolor{background canvas}{bg=uha@blue1}
+}
+
+\apptocmd{\beamer@reseteecodes}{%
+  \ifbool{negative}{%
+    \endgroup
+    \boolfalse{negative}
+  }{}
+}{}{}
+
+\mode<all>
+
+\makeatother
