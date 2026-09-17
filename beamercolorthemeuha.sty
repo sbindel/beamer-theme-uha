@@ -5,15 +5,13 @@
 % Mandatory part
 %--------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamercolorthemeuha}[2018/10/22 uha color theme]
+\ProvidesPackage{beamercolorthemeuha}[2026/17/09 uha color theme]
 
 \makeatletter
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+%--------------------------------------------------------------
 % colors definition
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------------------------------------------------------
 \definecolor{uha@bggray}{RGB}{245,245,245}
 \definecolor{uha@blue1}{RGB}{0,63,128}
 \definecolor{uha@blue2}{RGB}{20,40,92}
@@ -28,7 +26,7 @@
 \setbeamercolor{palette tertiary}{fg=uha@bggray, bg=uha@blue1}
 
 
-\setbeamercolor{background canvas}{bg=}
+\setbeamercolor{background canvas}{bg=uha@bggray}
 \setbeamercolor{normal text}{fg=uha@blue2}
 \setbeamercolor{alerted text}{fg=uha@orange1}
 \setbeamercolor{section in toc}{fg=uha@blue1}
@@ -37,7 +35,7 @@
 
 \setbeamercolor{titlepage}{fg=uha@blue1, bg=}
 \setbeamercolor{titlepage negative}{fg=uha@bggray, bg=}
-\setbeamercolor{sectionpage}{fg=uha@bggray, bg=uha@blue2}
+\setbeamercolor{sectionpage}{fg=uha@bggray, bg=uha@blue1}
 
 \setbeamercolor{headline}{bg=, fg=uha@orange1}
 \setbeamercolor{head/foot}{bg=, fg=uha@blue1}
@@ -54,6 +52,9 @@
 \setbeamercolor{block body}{fg=uha@blue1,bg=uha@bggray}
 
 
+%--------------------------------------------------------------
+% Negative frame
+%--------------------------------------------------------------
 \providebool{negative}
 
 \define@key{beamerframe}{negative}[true]{
@@ -62,8 +63,10 @@
   \setbeamertemplate{title page}[uha/negative]
   \setbeamertemplate{frametitle}[uha/negative]
   \setbeamertemplate{footline}[uha/negative]
-  \usebeamercolor[bg]{background canvas}
   \setbeamercolor{background canvas}{bg=uha@blue1}
+  \setbeamercolor{normal text}{fg=uha@bggray}
+  \usebeamercolor[bg]{background canvas}
+  \usebeamercolor[fg]{normal text}
 }
 
 \apptocmd{\beamer@reseteecodes}{%
