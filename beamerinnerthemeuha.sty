@@ -5,7 +5,7 @@
 % Mandatory part
 %--------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerinnerthemeuha}[2018/10/22 uha inner theme]
+\ProvidesPackage{beamerinnerthemeuha}[2026/09/17 uha inner theme]
 
 
 %--------------------------------------------------------------
@@ -26,20 +26,24 @@
 \defbeamertemplate*{block example begin}{uha}{
 	\par\vskip\medskipamount%
 	\usebeamercolor{block title example}
+	\ifx\insertblocktitle\@empty\newcommand{\yskiplength}{1.5ex}
+    \else\newcommand{\yskiplength}{2.5ex}
+    \fi
 	\begin{tikzpicture}
 		\node [
 			draw=fg,
 			fill=bg,
-			inner sep=2ex,
 			text=fg,
-			text width=\paperwidth - 2cm - 5ex,
-			minimum width=\paperwidth - 2cm - 1ex,
-			align=left,
-			rounded corners=1pt,
-			drop shadow={top color=black!50!white,
-				bottom color=black!30!white,
-				shadow xshift=3.5pt,
-				shadow yshift=-3.5pt,
+			inner sep=6pt,
+			inner ysep = \yskiplength,
+			text width=\textwidth - 6ex,
+			minimum width=\textwidth - 6ex,
+			align=justify,
+			rounded corners=5pt,
+			drop shadow={top color=black!70!uha@bggray,
+				bottom color= uha@bggray,
+				shadow xshift=3pt,
+				shadow yshift=-3pt,
               rounded corners}
 		] (BOXCONTENT) \bgroup \noindent%
 		\usebeamerfont{beamer body}%
@@ -58,7 +62,7 @@
 					anchor=west,
 					text=bg,
 					rounded corners
-				] at ([shift={(5pt,0)}]BOXCONTENT.north west) {\textbf{\insertblocktitle}};
+				] at ([shift={(4pt,0)}]BOXCONTENT.north west) {\textit{\insertblocktitle}};
 			}
 		\fi
 	\end{tikzpicture}
@@ -68,24 +72,27 @@
 % %--------------------------------------------------------------
 % % Alert block environment
 % %-------------------------------------------------------------
-\defbeamertemplate*{block alerted begin}{uha}
-{
+\defbeamertemplate*{block alerted begin}{uha}{
   \par\vskip\medskipamount%
   \usebeamercolor{block title alerted}
+  \ifx\insertblocktitle\@empty\newcommand{\yskiplength}{1.5ex}
+  \else\newcommand{\yskiplength}{2.5ex}
+  \fi
   \begin{tikzpicture}
     \node [
       draw=fg,
   	  fill=bg,
 	  text=fg,
-	  inner sep=2ex,
-      text width=\paperwidth - 2cm - 5ex,
-      minimum width=\paperwidth - 2cm - 1ex,
-      align=left,
-	  rounded corners=1pt,
-	  drop shadow={top color=black!50!white,
-				bottom color=black!30!white,
-				shadow xshift=3.5pt,
-				shadow yshift=-3.5pt,
+	  inner sep=6pt,
+	  inner ysep = \yskiplength,
+      text width=\textwidth - 6ex,
+      minimum width=\textwidth - 6ex,
+      align=justify,
+	  rounded corners=5pt,
+	  drop shadow={top color=black!70!uha@bggray,
+				bottom color= uha@bggray,
+				shadow xshift=3pt,
+				shadow yshift=-3pt,
 			rounded corners}
     ] (BOXCONTENT) \bgroup \noindent%
     \usebeamerfont{beamer body}%
@@ -105,7 +112,7 @@
       anchor=west,
       text=bg,
       rounded corners
-  ] at ([shift={(5pt,0)}]BOXCONTENT.north west) {\textbf{\insertblocktitle}};
+  ] at ([shift={(4pt,0)}]BOXCONTENT.north west) {\textit{\insertblocktitle}};
   }
   \fi
   \end{tikzpicture}
@@ -114,37 +121,34 @@
 % %--------------------------------------------------------------
 % % Block environment
 % %-------------------------------------------------------------
-\defbeamertemplate*{block begin}{uha}
-{
+\defbeamertemplate*{block begin}{uha}{
   \par\vskip\medskipamount%
   \usebeamercolor{block title}
   \ifx\insertblocktitle\@empty\newcommand{\yskiplength}{1.5ex}
-  \else\newcommand{\yskiplength}{2ex}
+  \else\newcommand{\yskiplength}{2.5ex}
   \fi
   \begin{tikzpicture}
     \node [
       draw=fg,
   	  fill=bg,
   	  text=fg,
-      inner sep = 1ex,
+      inner sep = 6pt,
       inner ysep = \yskiplength,
-      text width=\paperwidth - 2cm - 5ex,
-      minimum width=\paperwidth - 2cm - 1ex,
-	  rounded corners=1pt,
-	  drop shadow={top color=black!50!white,
-	  bottom color=black!30!white,
-		  shadow xshift=3.5pt,
-		  shadow yshift=-3.5pt,
-              rounded corners },
-    ] (BOXCONTENT) \bgroup%
-    \begin{minipage}{\textwidth}
+      text width=\textwidth - 6ex,
+      minimum width=\textwidth - 6ex,
+      align=justify,
+	  rounded corners = 5pt,
+	  drop shadow={top color=black!70!uha@bggray,
+          bottom color= uha@bggray,
+		  shadow xshift=3pt,
+		  shadow yshift=-3pt,
+		  rounded corners},
+    ] (BOXCONTENT) \bgroup \noindent%
     \usebeamerfont{beamer body}%
     \usebeamercolor{block body}%
 }
 
-\defbeamertemplate*{block end}{uha}
-{
-  \end{minipage}%
+\defbeamertemplate*{block end}{uha}{
   \egroup;
   \usebeamercolor{block title}
   \ifx\insertblocktitle\@empty
@@ -156,7 +160,7 @@
       anchor=west,
       text=bg,
       rounded corners
-  ] at ([shift={(5pt,0)}]BOXCONTENT.north west) {\textbf{\insertblocktitle}};
+  ] at ([shift={(4pt,0)}]BOXCONTENT.north west) {\textit{\insertblocktitle}};
   }
   \fi
   \end{tikzpicture}
@@ -189,20 +193,20 @@
   \nointerlineskip%
   \vskip0pt%
   \leavevmode
-  \begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=\paperheight, center]{titlepage negative}
-              \resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title-negative.tikz}}\strut\par
-              \vskip20pt
-              {\LARGE \bfseries \inserttitle}\strut\par
-              \vskip10pt
-              {\large \bfseries \insertsubtitle}\strut\par
-              \vskip30pt
+  \begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.9\paperheight, center]{titlepage negative}
+               \resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title-negative.tikz}}\strut\par
+               \vskip20pt
+               {\LARGE \bfseries \inserttitle}\strut\par
+               \vskip8pt
+               {\large \bfseries \insertsubtitle}\strut\par
+              \vskip25pt
               {\bfseries\insertauthor}\strut\par
-              \vskip1pt
+              \vskip5pt
               {\bfseries\insertinstitute}\strut\par
-              \vskip20pt
+              \vskip8pt
               \insertdate\strut\par
-              \vskip0.1\paperheight%
-  \end{beamercolorbox}
+             \vskip0.1\paperheight%
+ \end{beamercolorbox}
 }
 
 \AtBeginEnvironment{exampleblock}{\setbeamercolor{itemize item}{fg=uha@green}}
