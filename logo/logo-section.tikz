@@ -1,0 +1,32 @@
+﻿\begin{tikzpicture}
+
+	\node[draw,circle, scale=0.2] at (0,0) (a) {};
+
+	\node[draw,circle, scale=0.2] at (-1.4,1) (b) {};
+
+	\node[draw,circle, scale=0.2] at (-1.8,2) (c) {};
+
+	\node[draw,circle, scale=0.2] at (-2.2,1.7) (d) {};
+
+	\node[draw,circle, scale=0.2] at (-3,1.9) (e) {};
+	
+	\node[draw,circle, scale=0.2] at (-1.9,1.1) (f) {};
+
+	\node[draw,circle, scale=0.2] at (-2.5,0.5) (g) {};
+
+	\node[draw,circle, scale=0.2] at (-1.2,0.3) (h) {};
+
+	\node[draw,circle, scale=0.2] at (-2.9,2.3) (i) {};
+
+	\node[draw,circle, scale=0.2] at (-3.4,2.8) (j) {};
+
+	\draw (a) -- (b);
+	\draw (b) -- (f);
+	\draw (c) -- (d);
+	\draw (d) -- (e); 
+	\draw (f) -- (c);
+	\draw (g) -- (e);
+	\draw (g) -- (h);
+	\draw (i) -- (c);
+	\draw (i) -- (j);
+\end{tikzpicture}

@@ -1,0 +1,11 @@
+﻿\usetikzlibrary{positioning}
+\begin{tikzpicture}
+
+	\node[draw,circle,scale=0.4] (a) at (0,0) {};
+	
+	\node[draw,circle, scale=0.4]  (b) at (1,0.3) {};
+
+	\draw (a) -- (b);
+
+
+\end{tikzpicture}

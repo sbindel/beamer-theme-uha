@@ -1,12 +1,13 @@
 %\documentclass[aspectratio=169]{beamer}
-\documentclass[]{beamer}
+\documentclass[10pt]{beamer}
 
 \usetheme{uha}
 
 \usepackage[french,english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[slantedGreek,slantedGreek]{cmbright}
+\usepackage[scaled=0.92]{helvet}
+\usepackage[slantedGreek,slantedGreek]{mathptmx}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -17,7 +18,7 @@
 \setlist[perso]{label=\arabic*--}
 
 
-\title{Le theme beamer de l'UHA}
+\title{Le thème beamer de l'UHA}
 \subtitle{Présentation et tutoriel}
 \date{octobre 2023}
 \author{Dr. Sébastien Bindel}
@@ -42,7 +43,8 @@
 
 \section{Chargement du thème}
 %
-\begin{frame}[fragile]{Le thème beamer UHA}
+\begin{frame}[fragile]
+	\frametitle{Le thème beamer UHA}
 	Le thème  \alert{\texttt{UHA}} n'est pas disponible sur le CTAN, mais dans un dépôt sur \href{https://github.com/sbindel/beamer-theme-uha}{GitHub}. Celui-ci se charge de la manière suivante :
 	\begin{lstlisting}[frame=single]
 \documentclass{beamer}

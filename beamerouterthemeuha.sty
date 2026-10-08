@@ -20,8 +20,8 @@
 \defbeamertemplate*{frametitle}{uha}{
     \nointerlineskip
     \vskip-2pt%
-    \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=6.3ex, dp=1ex, left, leftskip=4ex]{head/foot}%
-        \usebeamerfont{frametitle}\insertframetitle
+    \begin{beamercolorbox}[sep=0ex, wd=0.9\paperwidth, ht=5.5ex, dp=1ex, left, leftskip=0ex]{head/foot}%
+		\usebeamerfont{frametitle}\insertframetitle
         \strut\par%
         \ifx\insertframesubtitle\@empty%
             \nointerlineskip
@@ -31,19 +31,19 @@
             \usebeamerfont{subframetitle}\hspace{1pt}\insertframesubtitle
         \fi
     \end{beamercolorbox}%
-    \nointerlineskip%
-     \vskip-4.5pt%
-    \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=0.5ex, dp=0ex, leftskip=4ex]{headline}%
-        \begin{tikzpicture}
-            \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
-        \end{tikzpicture}
-    \end{beamercolorbox}%
+%     \nointerlineskip%
+%      \vskip-4.5pt%
+%     \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=0.5ex, dp=0ex, leftskip=4ex]{headline}%
+%         \begin{tikzpicture}
+%             \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
+%         \end{tikzpicture}
+%     \end{beamercolorbox}%
 }
 %
 \defbeamertemplate{frametitle}{uha/negative}{
     \nointerlineskip
     \vskip-2pt%
-    \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=6.3ex, dp=1ex, left, leftskip=4ex]{head/foot negative}%
+    \begin{beamercolorbox}[sep=0ex, wd=0.9\paperwidth, ht=5.5ex, dp=1ex, left, leftskip=0ex]{head/foot negative}%
         \usebeamerfont{frametitle}\insertframetitle
         \strut\par%
         \ifx\insertframesubtitle\@empty%
@@ -54,13 +54,13 @@
             \usebeamerfont{subframetitle}\hspace{1pt}\insertframesubtitle
         \fi
     \end{beamercolorbox}%
-    \nointerlineskip%
-     \vskip-4.5pt%
-    \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=0.5ex, dp=0ex, leftskip=4ex]{headline}%
-        \begin{tikzpicture}
-            \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
-        \end{tikzpicture}
-    \end{beamercolorbox}%
+%     \nointerlineskip%
+%      \vskip-4.5pt%
+%     \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=0.5ex, dp=0ex, leftskip=4ex]{headline}%
+%         \begin{tikzpicture}
+%             \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
+%         \end{tikzpicture}
+%     \end{beamercolorbox}%
 }
 %--------------------------------------------------------------
 % Footer
@@ -77,10 +77,11 @@
         \nointerlineskip%
         \leavevmode%
         \begin{beamercolorbox}[sep=0ex, wd=0.3333\paperwidth, ht=2.5ex, dp=1ex, left, leftskip=2ex]{head/foot}%
-            \resizebox{0.025\textwidth}{!}{\input{logo/logo-uha.tikz}} \insertinstitute
+            %\resizebox{0.025\textwidth}{!}{\input{logo/logo-uha.tikz}} \insertauthor %\insertinstitute
+            \insertauthor
         \end{beamercolorbox}%
         \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, center]{head/foot}%
-            %\usebeamerfont{footline}\insertshorttitle
+            \usebeamerfont{footline}\insertshorttitle
         \end{beamercolorbox}%
         \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, right, rightskip=2ex]{head/foot}%
             \usebeamerfont{footline}\insertframenumber/\inserttotalframenumber
@@ -101,10 +102,11 @@
         \nointerlineskip%
         \leavevmode%
         \begin{beamercolorbox}[sep=0ex, wd=0.3333\paperwidth, ht=2.5ex, dp=1ex, left, leftskip=2ex]{head/foot negative}%
-            \resizebox{0.025\textwidth}{!}{\input{logo/logo-uha-negative.tikz}} \insertinstitute
+            %\resizebox{0.025\textwidth}{!}{\input{logo/logo-uha-negative.tikz}} \insertinstitute
+            \insertauthor
         \end{beamercolorbox}%
         \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, center]{head/foot negative}%
-            %\usebeamerfont{footline}\insertshorttitle
+            \usebeamerfont{footline}\insertshorttitle
         \end{beamercolorbox}%
         \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, right, rightskip=2ex]{head/foot negative}%
             \usebeamerfont{footline}\insertframenumber/\inserttotalframenumber
@@ -119,11 +121,17 @@
 \defbeamertemplate*{section page}{uha}{
     \nointerlineskip%
     \vskip0pt%
-    \leavevmode
-    \begin{beamercolorbox}[wd=\paperwidth, ht=\paperheight, center]{sectionpage}
+   % \leavevmode
+    \begin{beamercolorbox}[sep=0ex,wd=\paperwidth, ht=0.5\paperheight, center]{sectionpage}
+      % \resizebox{\textwidth}{!}{\input{logo/logo-uha-negative-section.tikz}}
        \usebeamerfont{section}\insertsectionnumber.~\insertsection
-       \vskip0.5\paperheight%
-    \end{beamercolorbox}
+    \end{beamercolorbox}%
+    \nointerlineskip%
+     \begin{beamercolorbox}[sep=0ex,wd=\paperwidth, ht=0.5\paperheight, left]{sectionpage}
+       \input{logo/logo-section.tikz}
+    \end{beamercolorbox}%
+    \vskip-12pt%
+    \nointerlineskip%
 }
 \AtBeginSection{\frame[plain, noframenumbering]{\sectionpage}}
 %
