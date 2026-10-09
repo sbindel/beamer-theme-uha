@@ -1,32 +1,73 @@
-﻿\begin{tikzpicture}
+﻿\usetikzlibrary{shadows}
+\definecolor{uha@graphgray}{RGB}{206,215,219}
+\definecolor{uha@graphblue}{RGB}{0,145,234}
+\definecolor{uha@graphblueS}{RGB}{150,232,254}
 
-	\node[draw,circle, scale=0.2] at (0,0) (a) {};
+\begin{tikzpicture}
+	\node[draw,circle, scale=0.5, fill=uha@graphblue, color=uha@graphblue, circular glow={fill=uha@graphblueS, shadow scale=1.3}] at (0,4) (a) {};
 
-	\node[draw,circle, scale=0.2] at (-1.4,1) (b) {};
+ 	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (0.5,3.8) (b) {};
+	 \draw[uha@graphgray] (a) -- (b);
 
-	\node[draw,circle, scale=0.2] at (-1.8,2) (c) {};
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (0.6,3) (c) {};
+	\draw[uha@graphgray] (b) -- (c);
 
-	\node[draw,circle, scale=0.2] at (-2.2,1.7) (d) {};
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (0.2,3.4) (d) {};
+	\node[draw,circle, scale=0.9, color=uha@graphgray] at (0.2,3.4) (d1) {};
+	\draw[uha@graphgray] (c) -- (d1);
 
-	\node[draw,circle, scale=0.2] at (-3,1.9) (e) {};
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (0.1,2.5) (d2) {};
+ 
+ 	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (1,3.6) (e) {};
+ 
+ 	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (1.3,2.8) (f) {};
+	\draw[uha@graphgray] (d2)-- (f);
+	\draw[uha@graphgray] (d1) -- (b); 
+	\draw[uha@graphgray] (d1)-- (d2);
+ 
+ 	\node[draw,circle, scale=0.5, fill=uha@graphblue, color=uha@graphblue, circular glow={fill=uha@graphblueS, shadow scale=1.3}] at (1,3.2) (g) {};
+	\draw [uha@graphgray] (g) -- (c);
+ 
+ 	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (2.2,2.7) (h) {};
+	\draw [uha@graphgray] (h) -- (f);
+
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (3,2.5) (i) {};
+	\draw[uha@graphgray] (i) -- (h);
 	
-	\node[draw,circle, scale=0.2] at (-1.9,1.1) (f) {};
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (2.4,3.1) (k) {};
+	\draw[uha@graphgray] (k) -- (h);
 
-	\node[draw,circle, scale=0.2] at (-2.5,0.5) (g) {};
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (1.6,3.1) (l) {};
+	\node[draw,circle, scale=0.9, color=uha@graphgray] at (1.6,3.1) (l1) {};
 
-	\node[draw,circle, scale=0.2] at (-1.2,0.3) (h) {};
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (2.4,3.5) (m) {};
 
-	\node[draw,circle, scale=0.2] at (-2.9,2.3) (i) {};
+	\node[draw,circle, scale=0.5, fill=uha@graphblue, color=uha@graphblue] at (3.3,3.2) (n) {};
+	\draw[uha@graphgray] (k) -- (n);
 
-	\node[draw,circle, scale=0.2] at (-3.4,2.8) (j) {};
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (3.8,2.7) (o) {};
+	\draw[uha@graphgray] (n) -- (o);
+	
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (4.5,2.5) (p) {};
+	\draw[uha@graphgray] (o) -- (p);
 
-	\draw (a) -- (b);
-	\draw (b) -- (f);
-	\draw (c) -- (d);
-	\draw (d) -- (e); 
-	\draw (f) -- (c);
-	\draw (g) -- (e);
-	\draw (g) -- (h);
-	\draw (i) -- (c);
-	\draw (i) -- (j);
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (1.5,3.9) (q) {};
+	\draw[uha@graphgray] (m) -- (q);
+		
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (0.5,4.5) (r) {};
+	\draw[uha@graphgray] (q) -- (r);
+
+	\node[draw,circle, scale=0.5, fill=uha@graphgray, color=uha@graphgray] at (0.9,4) (s) {};
+	\draw[uha@graphgray] (s) -- (r);
+	\draw[uha@graphgray] (s) -- (e);
+	\draw[uha@graphgray] (s) -- (b);
+
+
+ 	\draw[uha@graphgray] (d1)-- (e);
+	\draw[uha@graphgray] (d2)-- (c);
+	\draw[uha@graphgray] (l1) -- (k);
+	\draw[uha@graphgray] (l1) -- (e);
+	\draw[uha@graphgray] (l1) -- (g);
+	\draw[uha@graphgray] (m) -- (l1);
+	
 \end{tikzpicture}

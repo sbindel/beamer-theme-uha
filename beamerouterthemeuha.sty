@@ -31,13 +31,6 @@
             \usebeamerfont{subframetitle}\hspace{1pt}\insertframesubtitle
         \fi
     \end{beamercolorbox}%
-%     \nointerlineskip%
-%      \vskip-4.5pt%
-%     \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=0.5ex, dp=0ex, leftskip=4ex]{headline}%
-%         \begin{tikzpicture}
-%             \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
-%         \end{tikzpicture}
-%     \end{beamercolorbox}%
 }
 %
 \defbeamertemplate{frametitle}{uha/negative}{
@@ -54,13 +47,6 @@
             \usebeamerfont{subframetitle}\hspace{1pt}\insertframesubtitle
         \fi
     \end{beamercolorbox}%
-%     \nointerlineskip%
-%      \vskip-4.5pt%
-%     \begin{beamercolorbox}[sep=0ex, wd=\paperwidth, ht=0.5ex, dp=0ex, leftskip=4ex]{headline}%
-%         \begin{tikzpicture}
-%             \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
-%         \end{tikzpicture}
-%     \end{beamercolorbox}%
 }
 %--------------------------------------------------------------
 % Footer
@@ -77,7 +63,6 @@
         \nointerlineskip%
         \leavevmode%
         \begin{beamercolorbox}[sep=0ex, wd=0.3333\paperwidth, ht=2.5ex, dp=1ex, left, leftskip=2ex]{head/foot}%
-            %\resizebox{0.025\textwidth}{!}{\input{logo/logo-uha.tikz}} \insertauthor %\insertinstitute
             \insertauthor
         \end{beamercolorbox}%
         \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, center]{head/foot}%
@@ -102,7 +87,6 @@
         \nointerlineskip%
         \leavevmode%
         \begin{beamercolorbox}[sep=0ex, wd=0.3333\paperwidth, ht=2.5ex, dp=1ex, left, leftskip=2ex]{head/foot negative}%
-            %\resizebox{0.025\textwidth}{!}{\input{logo/logo-uha-negative.tikz}} \insertinstitute
             \insertauthor
         \end{beamercolorbox}%
         \begin{beamercolorbox}[sep=0ex, wd=.3333\paperwidth, ht=2.5ex, dp=1ex, center]{head/foot negative}%
@@ -121,17 +105,11 @@
 \defbeamertemplate*{section page}{uha}{
     \nointerlineskip%
     \vskip0pt%
-   % \leavevmode
-    \begin{beamercolorbox}[sep=0ex,wd=\paperwidth, ht=0.5\paperheight, center]{sectionpage}
-      % \resizebox{\textwidth}{!}{\input{logo/logo-uha-negative-section.tikz}}
+    \leavevmode
+    \begin{beamercolorbox}[wd=\paperwidth, ht=\paperheight, center]{sectionpage}
        \usebeamerfont{section}\insertsectionnumber.~\insertsection
-    \end{beamercolorbox}%
-    \nointerlineskip%
-     \begin{beamercolorbox}[sep=0ex,wd=\paperwidth, ht=0.5\paperheight, left]{sectionpage}
-       \input{logo/logo-section.tikz}
-    \end{beamercolorbox}%
-    \vskip-12pt%
-    \nointerlineskip%
+       \vskip0.5\paperheight%
+    \end{beamercolorbox}
 }
 \AtBeginSection{\frame[plain, noframenumbering]{\sectionpage}}
 %
