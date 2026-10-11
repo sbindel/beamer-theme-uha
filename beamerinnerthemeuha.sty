@@ -170,43 +170,43 @@
 % Title frame
 %--------------------------------------------------------------
 \defbeamertemplate*{title page}{uha}{
-  \nointerlineskip%
-  \vskip0pt%
-  \leavevmode
-  \begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=\paperheight, center]{titlepage}
-              \resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title.tikz}}\strut\par
-              \vskip20pt
-              {\LARGE \bfseries \inserttitle}\strut\par
-              \vskip10pt
-              {\large \bfseries \insertsubtitle}\strut\par
-              \vskip30pt
-              {\bfseries\insertauthor}\strut\par
-              \vskip1pt
-              {\bfseries\insertinstitute}\strut\par
-              \vskip20pt
-              \insertdate\strut\par
-              \vskip0.1\paperheight%
-  \end{beamercolorbox}
+	\nointerlineskip%
+	\vskip0pt%
+	\leavevmode
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=\paperheight, center]{titlepage}
+		\resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title.tikz}}\strut\par
+		\vskip20pt
+		{\LARGE \bfseries \inserttitle}\strut\par
+		\vskip10pt
+		{\large \bfseries \insertsubtitle}\strut\par
+		\vskip30pt
+		{\bfseries\insertauthor}\strut\par
+		\vskip1pt
+		{\bfseries\insertinstitute}\strut\par
+		\vskip20pt
+		\insertdate\strut\par
+		\vskip0.1\paperheight%
+	\end{beamercolorbox}
 }
 
 \defbeamertemplate{title page}{uha/negative}{
-  \nointerlineskip%
-  \vskip0pt%
-  \leavevmode
-  \begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.9\paperheight, center]{titlepage negative}
-               \resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title-negative.tikz}}\strut\par
-               \vskip20pt
-               {\LARGE \bfseries \inserttitle}\strut\par
-               \vskip8pt
-               {\large \bfseries \insertsubtitle}\strut\par
-              \vskip25pt
-              {\bfseries\insertauthor}\strut\par
-              \vskip5pt
-              {\bfseries\insertinstitute}\strut\par
-              \vskip8pt
-              \insertdate\strut\par
-             \vskip0.1\paperheight%
- \end{beamercolorbox}
+	\nointerlineskip%
+	\vskip0pt%
+	\leavevmode
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.9\paperheight, center]{titlepage negative}
+		\resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title-negative.tikz}}\strut\par
+		\vskip20pt
+		{\LARGE \bfseries \inserttitle}\strut\par
+		\vskip8pt
+		{\large \bfseries \insertsubtitle}\strut\par
+		\vskip25pt
+		{\bfseries\insertauthor}\strut\par
+		\vskip5pt
+		{\bfseries\insertinstitute}\strut\par
+		\vskip8pt
+		\insertdate\strut\par
+		\vskip0.1\paperheight%
+	\end{beamercolorbox}
 }
 
 \AtBeginEnvironment{exampleblock}{\setbeamercolor{itemize item}{fg=uha@green}}
