@@ -172,41 +172,53 @@
 \defbeamertemplate*{title page}{uha}{
 	\nointerlineskip%
 	\vskip0pt%
-	\leavevmode
-	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=\paperheight, center]{titlepage}
-		\resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title.tikz}}\strut\par
-		\vskip20pt
-		{\LARGE \bfseries \inserttitle}\strut\par
-		\vskip10pt
-		{\large \bfseries \insertsubtitle}\strut\par
-		\vskip30pt
-		{\bfseries\insertauthor}\strut\par
-		\vskip1pt
-		{\bfseries\insertinstitute}\strut\par
-		\vskip20pt
-		\insertdate\strut\par
-		\vskip0.1\paperheight%
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.15\paperheight, left, leftskip=10pt]{titlepage}
+		\raisebox{-.4\height}{\resizebox{0.2\textwidth}{!}{\input{logo/titlepage-logo-uha.tikz}}}%
+		\textsc{\bfseries Université de Haute Alsace}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.75\paperheight, left,leftskip=20pt]{titlepage}
+	{\huge\bfseries \inserttitle}\strut\par
+	\vskip3pt
+	{\large \bfseries \insertsubtitle}\strut\par
+	\vskip5pt
+	 \begin{tikzpicture}
+            \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
+	\end{tikzpicture}
+	\vskip30pt
+	{\bfseries\insertauthor}\strut\par
+	\vskip7pt
+	{\insertinstitute}\strut\par
+	\vskip0.1\paperheight%
 	\end{beamercolorbox}
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.1\paperheight, right, rightskip=20pt]{titlepage}
+		{\footnotesize\insertdate}\strut\par
+	\end{beamercolorbox}%
 }
 
 \defbeamertemplate{title page}{uha/negative}{
 	\nointerlineskip%
 	\vskip0pt%
-	\leavevmode
-	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.9\paperheight, center]{titlepage negative}
-		\resizebox{0.2\textwidth}{!}{\input{logo/logo-uha-title-negative.tikz}}\strut\par
-		\vskip20pt
-		{\LARGE \bfseries \inserttitle}\strut\par
-		\vskip8pt
-		{\large \bfseries \insertsubtitle}\strut\par
-		\vskip25pt
-		{\bfseries\insertauthor}\strut\par
-		\vskip5pt
-		{\bfseries\insertinstitute}\strut\par
-		\vskip8pt
-		\insertdate\strut\par
-		\vskip0.1\paperheight%
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.15\paperheight, left, leftskip=10pt]{titlepage negative}
+		\raisebox{-.4\height}{\resizebox{0.2\textwidth}{!}{\input{logo/titlepage-logo-uha-negative.tikz}}}%
+		\textsc{\bfseries Université de Haute Alsace}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.75\paperheight, left,leftskip=20pt]{titlepage negative}
+	{\huge\bfseries \inserttitle}\strut\par
+	\vskip3pt
+	{\large \bfseries \insertsubtitle}\strut\par
+	\vskip5pt
+	 \begin{tikzpicture}
+            \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
+	\end{tikzpicture}
+	\vskip30pt
+	{\bfseries\insertauthor}\strut\par
+	\vskip7pt
+	{\insertinstitute}\strut\par
+	\vskip0.1\paperheight%
 	\end{beamercolorbox}
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.1\paperheight, right, rightskip=20pt]{titlepage negative}
+		{\footnotesize\insertdate}\strut\par
+	\end{beamercolorbox}%
 }
 
 \AtBeginEnvironment{exampleblock}{\setbeamercolor{itemize item}{fg=uha@green}}
