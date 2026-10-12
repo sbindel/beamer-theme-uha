@@ -20,7 +20,7 @@
 
 \title{Le thème beamer de l'UHA}
 \subtitle{Présentation et tutoriel}
-\date{octobre 2023}
+\date{octobre 2026}
 \author{Dr. Sébastien Bindel}
 \institute{Université de Haute Alsace}
 
@@ -46,7 +46,7 @@
 %
 \begin{frame}[fragile]
 	\frametitle{Le thème beamer UHA}
-	Le thème  \alert{\texttt{UHA}} n'est pas disponible sur le CTAN, mais dans un dépôt sur \href{https://github.com/sbindel/beamer-theme-uha}{GitHub}. Celui-ci se charge de la manière suivante :
+	Le thème \alert{\texttt{UHA}} n'est pas disponible sur le CTAN, mais dans un dépôt sur \href{https://github.com/sbindel/beamer-theme-uha}{GitHub}. Celui-ci se charge de la manière suivante :
 	\begin{lstlisting}[frame=single]
 \documentclass{beamer}
 \usetheme{uha}
@@ -54,8 +54,9 @@
 
 	\textbf{Remarques :}
 	\begin{itemize}
-		\item Le theme supporte tous les tailles de police.
-		\item Tous les formats sont supportés.
+		\item Le thème supporte tous les tailles de police,
+		\item tous les formats sont supportés,
+		\item le paquet [scaled=0.92]{helvet} a été utilisé dans ce document.
 	\end{itemize}
 \end{frame}
 %
@@ -64,18 +65,21 @@
 \begin{frame}[fragile]
 	\frametitle{Un titre}
 	\framesubtitle{Un sous-titre}
-	Les titres d'une diapositive se spécifient avec les commandes \alert{frametitle} et \alert{framesubtitle}.
-
+	Les titres d'une diapositive se spécifient avec les commandes \alert{frametitle} et \alert{framesubtitle}. Il est également possible de définir une diapositive sans titre.
 		\begin{lstlisting}[frame=single]
 \frametitle{un titre}
 \framesubtitle{un sous-titre}
 	\end{lstlisting}
-	Il est également possible de définir une diapositive sans titre, en ne spécifiant rien.
 \end{frame}
 
 \begin{frame}
 	\frametitle{Le pied de page}
-	Dans le pied de page se trouve le logo de l'UHA, dessiné avec TikZ, l'institut et le numéro des diapositives. Seules les diapositives classiques sont comptabilisées, celles liées aux sections et la première affichée ne sont pas prises en compte.
+	Le pied de page contient trois informations :
+	\begin{itemize}
+		\item l'auteur,
+		\item le titre court de diaporama,
+		\item le numéro de la diapositive courante.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Section}
@@ -130,7 +134,7 @@
 \begin{verbatim}
 \usepackage[loadonly]{enumitem}
 \end{verbatim}
-	Etant donné que le paquet est chargé avec l'option \alert{loadonly}, la définition de nouvelles listes devient possible.
+	\'Etant donné que le paquet est chargé avec l'option \alert{loadonly}, la définition de nouvelles listes devient possible.
 	\begin{perso}
 			\item Le premier,
 			\item le second.
@@ -153,7 +157,7 @@
 
 \begin{frame}[negative]
 	\frametitle{Diapositive négative}
-	Le template UHA permet d'inverser les couleurs en utilisant l'option \textbf{negative}.
+	Le thème permet d'inverser les couleurs en utilisant l'option \textbf{negative}.
 
 	\alert{Pour l'instant, les options fragile et negative sont incompatibles.}
 \end{frame}
