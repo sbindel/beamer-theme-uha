@@ -19,9 +19,8 @@
 %--------------------------------------------------------------
 \defbeamertemplate*{frametitle}{uha}{
     \nointerlineskip
-   % \vskip-2pt%
     \leavevmode%
-    \begin{beamercolorbox}[sep=0ex, wd=0.01\paperwidth, ht=5ex, dp=1ex, center]{head/foot negative}%
+	\begin{beamercolorbox}[sep=0ex, wd=0.01\paperwidth, ht=5ex, dp=1ex, center]{head/bar}%
     \end{beamercolorbox}%
      \begin{beamercolorbox}[sep=0ex, wd=0.8\paperwidth, ht=5ex, dp=1ex, left, leftskip=1ex]{head/foot}%
 		\usebeamerfont{frametitle}\insertframetitle
@@ -39,9 +38,11 @@
 %
 \defbeamertemplate{frametitle}{uha/negative}{
     \nointerlineskip
-    \vskip-2pt%
-    \begin{beamercolorbox}[sep=0ex, wd=0.9\paperwidth, ht=5.5ex, dp=1ex, left, leftskip=0ex]{head/foot negative}%
-        \usebeamerfont{frametitle}\insertframetitle
+    \leavevmode%
+    \begin{beamercolorbox}[sep=0ex, wd=0.01\paperwidth, ht=5ex, dp=1ex, center]{head/bar negative}%
+    \end{beamercolorbox}%
+     \begin{beamercolorbox}[sep=0ex, wd=0.8\paperwidth, ht=5ex, dp=1ex, left, leftskip=1ex]{head/foot negative}%
+		\usebeamerfont{frametitle}\insertframetitle
         \strut\par%
         \ifx\insertframesubtitle\@empty%
             \nointerlineskip
@@ -50,6 +51,7 @@
             \nointerlineskip
             \usebeamerfont{subframetitle}\hspace{1pt}\insertframesubtitle
         \fi
+        \vskip-2pt
     \end{beamercolorbox}%
 }
 %--------------------------------------------------------------
