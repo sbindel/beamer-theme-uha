@@ -172,26 +172,26 @@
 \defbeamertemplate*{title page}{uha}{
 	\nointerlineskip%
 	\vskip0pt%
-	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.15\paperheight, left, leftskip=10pt]{titlepage}
-		\raisebox{-.4\height}{\resizebox{0.2\textwidth}{!}{\input{logo/titlepage-logo-uha.tikz}}}%
-		\textsc{\bfseries Université de Haute Alsace}
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.2\paperheight, right, rightskip=5pt]{titlepage}
+		\resizebox{!}{0.16\paperheight}{\input{logo/titlepage-logo-uha.tikz}}%
 	\end{beamercolorbox}%
-	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.75\paperheight, left,leftskip=20pt]{titlepage}
-	{\huge\bfseries \inserttitle}\strut\par
-	\vskip3pt
-	{\large \bfseries \insertsubtitle}\strut\par
-	\vskip5pt
-	 \begin{tikzpicture}
-            \draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
-	\end{tikzpicture}
-	\vskip30pt
-	{\bfseries\insertauthor}\strut\par
-	\vskip7pt
-	{\insertinstitute}\strut\par
-	\vskip0.1\paperheight%
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.65\paperheight, left,leftskip=20pt]{titlepage}
+		{\huge\bfseries \inserttitle}\strut\par
+		\vskip2ex
+		{\large \bfseries \insertsubtitle}\strut\par
+		\vskip5pt
+		\begin{tikzpicture}
+			\draw[line width=0.5pt, rounded corners] (0,0) -- (0.85\linewidth,0);
+		\end{tikzpicture}
+		\vskip15pt
+		{\bfseries\insertauthor}\strut\par
+		\vskip1ex
+		{\insertinstitute}\strut\par
+		\vskip0.1\paperheight%
 	\end{beamercolorbox}
-	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.1\paperheight, right, rightskip=20pt]{titlepage}
-		{\footnotesize\insertdate}\strut\par
+	\begin{beamercolorbox}[dp=0ex, wd=\paperwidth, ht=0.15\paperheight, right, rightskip=20pt]{titlepage}
+		{\small\insertdate}
+		\vskip5pt
 	\end{beamercolorbox}%
 }
 
